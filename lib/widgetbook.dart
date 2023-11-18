@@ -27,10 +27,12 @@ class WidgetbookApp extends StatelessWidget {
               useCases: [
                 WidgetbookUseCase(
                   name: 'Default',
-                  builder: (context) => CustomButton(
-                    backgroundColor: Colors.blue,
-                    title: 'Click',
-                    onPressed: () {},
+                  builder: (context) => Center(
+                    child: CustomButton(
+                      backgroundColor: Colors.blue,
+                      title: 'Click',
+                      onPressed: () {},
+                    ),
                   ),
                 ),
               ],
@@ -40,17 +42,21 @@ class WidgetbookApp extends StatelessWidget {
               useCases: [
                 WidgetbookUseCase(
                   name: 'Default',
-                  builder: (context) => CustomTextField(
-                    controller: TextEditingController(),
-                    fillColor: Colors.white,
+                  builder: (context) => Center(
+                    child: CustomTextField(
+                      controller: TextEditingController(),
+                      fillColor: Colors.white,
+                    ),
                   ),
                 ),
                 WidgetbookUseCase(
                   name: 'With Hint Text',
-                  builder: (context) => CustomTextField(
-                    controller: TextEditingController(),
-                    fillColor: Colors.white,
-                    hintText: 'Please enter your hint text here.',
+                  builder: (context) => Center(
+                    child: CustomTextField(
+                      controller: TextEditingController(),
+                      fillColor: Colors.white,
+                      hintText: 'Please enter your hint text here.',
+                    ),
                   ),
                 ),
               ],
@@ -60,7 +66,9 @@ class WidgetbookApp extends StatelessWidget {
               useCases: [
                 WidgetbookUseCase(
                   name: 'Default',
-                  builder: (context) => blueContainerUseCase(context),
+                  builder: (context) => Center(
+                    child: blueContainerUseCase(context),
+                  ),
                 ),
               ],
             ),
