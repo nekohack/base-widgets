@@ -75,7 +75,15 @@ class WidgetbookApp extends StatelessWidget {
           ],
         ),
       ],
-      addons: [],
+      addons: [
+        DeviceFrameAddon(
+          devices: [
+            Devices.ios.iPhoneSE,
+            Devices.ios.iPhone13,
+          ],
+          initialDevice: Devices.ios.iPhone13,
+        ),
+      ],
       integrations: [
         WidgetbookCloudIntegration(),
       ],
