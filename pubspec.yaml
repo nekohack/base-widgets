@@ -12,6 +12,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
+  intl: ^0.18.1
   widgetbook_annotation: ^3.1.0
   widgetbook: ^3.4.1
 
@@ -24,3 +25,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/

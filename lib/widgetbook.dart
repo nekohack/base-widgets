@@ -1,3 +1,4 @@
+import 'package:base_widgets/components/boarding_card.dart';
 import 'package:base_widgets/components/custom_button.dart';
 import 'package:base_widgets/components/custom_text_field.dart';
 import 'package:base_widgets/containers/blue_container.dart';
@@ -22,6 +23,24 @@ class WidgetbookApp extends StatelessWidget {
         WidgetbookFolder(
           name: 'Widgets',
           children: [
+            WidgetbookComponent(
+              name: 'BoardingCard',
+              useCases: [
+                WidgetbookUseCase(
+                  name: 'Default',
+                  builder: (context) => Center(
+                    child: BoardingCard(
+                      boardedAt: DateTime.now(),
+                      departure: 'ITM',
+                      arrival: 'HND',
+                      airline: 'JAL',
+                      boardingType: 'Boeing777-2',
+                      registration: 'JA745A',
+                    ),
+                  ),
+                ),
+              ],
+            ),
             WidgetbookComponent(
               name: 'CustomButton',
               useCases: [
