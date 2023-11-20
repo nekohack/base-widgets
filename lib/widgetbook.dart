@@ -1,5 +1,6 @@
 import 'package:base_widgets/components/boarding_card.dart';
 import 'package:base_widgets/components/custom_button.dart';
+import 'package:base_widgets/components/custom_dropdown_field.dart';
 import 'package:base_widgets/components/custom_text_field.dart';
 import 'package:base_widgets/containers/blue_container.dart';
 import 'package:flutter/material.dart';
@@ -51,6 +52,24 @@ class WidgetbookApp extends StatelessWidget {
                       backgroundColor: Colors.blue,
                       title: 'Click',
                       onPressed: () {},
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            WidgetbookComponent(
+              name: 'CustomDropdownField',
+              useCases: [
+                WidgetbookUseCase(
+                  name: 'Default',
+                  builder: (context) => Center(
+                    child: CustomDropdownField(
+                      color: Colors.blue,
+                      underlineColor: Colors.deepPurpleAccent,
+                      dropdownList: const ['One', 'Two', 'Three', 'Four'],
+                      onChanged: (String? value) {
+                        print(value);
+                      },
                     ),
                   ),
                 ),
