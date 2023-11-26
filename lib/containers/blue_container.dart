@@ -6,14 +6,10 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
   type: Container,
 )
 Widget blueContainerUseCase(BuildContext context) {
-  return Column(
-    children: [
-      Container(
-        color: Colors.blue,
-        child: const SizedBox.square(
-          dimension: 100,
-        ),
-      ),
-    ],
+  return Container(
+    color: Colors.blue,
+    child: const SizedBox.square(
+      dimension: 100,
+    ),
   );
 }
