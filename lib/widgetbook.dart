@@ -1,8 +1,11 @@
 import 'package:base_widgets/components/boarding_card.dart';
+import 'package:base_widgets/components/bottom_navigation_tab.dart';
 import 'package:base_widgets/components/custom_button.dart';
 import 'package:base_widgets/components/custom_dropdown_field.dart';
+import 'package:base_widgets/components/top_navigation_tab.dart';
 import 'package:base_widgets/components/custom_text_field.dart';
 import 'package:base_widgets/containers/blue_container.dart';
+import 'package:base_widgets/models/tab_item.dart';
 import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
@@ -10,12 +13,18 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 import 'widgetbook.directories.g.dart';
 
 void main() {
-  runApp(const WidgetbookApp());
+  runApp(WidgetbookApp());
 }
 
 @widgetbook.App()
 class WidgetbookApp extends StatelessWidget {
-  const WidgetbookApp({Key? key}) : super(key: key);
+  WidgetbookApp({Key? key}) : super(key: key);
+
+  final List<TabItem> _tabItems = [
+    TabItem(icon: Icons.home.codePoint, name: 'Home'),
+    TabItem(icon: Icons.favorite.codePoint, name: 'Favorite'),
+    TabItem(icon: Icons.notification_add.codePoint, name: 'Add'),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +46,25 @@ class WidgetbookApp extends StatelessWidget {
                       airline: 'JAL',
                       boardingType: 'Boeing777-2',
                       registration: 'JA745A',
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            WidgetbookComponent(
+              name: 'BottomNavigationTab',
+              useCases: [
+                WidgetbookUseCase(
+                  name: 'Default',
+                  builder: (context) => Center(
+                    child: BottomNavigationTab(
+                      title: 'BottomNavigationTab',
+                      tabItems: _tabItems,
+                      screens: const [
+                        Icon(Icons.home),
+                        Icon(Icons.favorite),
+                        Icon(Icons.notification_add),
+                      ],
                     ),
                   ),
                 ),
@@ -94,6 +122,25 @@ class WidgetbookApp extends StatelessWidget {
                       controller: TextEditingController(),
                       fillColor: Colors.white,
                       hintText: 'Please enter your hint text here.',
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            WidgetbookComponent(
+              name: 'TopNavigationTab',
+              useCases: [
+                WidgetbookUseCase(
+                  name: 'Default',
+                  builder: (context) => Center(
+                    child: TopNavigationTab(
+                      title: 'TopNavigationTab',
+                      tabItems: _tabItems,
+                      screens: const [
+                        Icon(Icons.home),
+                        Icon(Icons.favorite),
+                        Icon(Icons.notification_add),
+                      ],
                     ),
                   ),
                 ),
