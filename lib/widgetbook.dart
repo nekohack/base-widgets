@@ -1,7 +1,7 @@
 import 'package:base_widgets/components/boarding_card.dart';
 import 'package:base_widgets/components/bottom_navigation_tab.dart';
 import 'package:base_widgets/components/custom_button.dart';
-import 'package:base_widgets/components/custom_dropdown_field.dart';
+import 'package:base_widgets/components/dropdown_field.dart';
 import 'package:base_widgets/components/top_navigation_tab.dart';
 import 'package:base_widgets/components/custom_text_field.dart';
 import 'package:base_widgets/containers/blue_container.dart';
@@ -92,12 +92,12 @@ class WidgetbookApp extends StatelessWidget {
               ],
             ),
             WidgetbookComponent(
-              name: 'CustomDropdownField',
+              name: 'DropdownField',
               useCases: [
                 WidgetbookUseCase(
                   name: 'Default',
                   builder: (context) => Center(
-                    child: CustomDropdownField(
+                    child: DropdownField(
                       color: Colors.blue,
                       underlineColor: Colors.deepPurpleAccent,
                       dropdownList: const ['One', 'Two', 'Three', 'Four'],

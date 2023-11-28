@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class CustomDropdownField extends StatelessWidget {
+class DropdownField extends StatelessWidget {
   final Color color;
   final Color underlineColor;
   final List<String> dropdownList;
   final Function(String?) onChanged;
 
-  const CustomDropdownField({
+  const DropdownField({
     Key? key,
     required this.color,
     required this.underlineColor,
