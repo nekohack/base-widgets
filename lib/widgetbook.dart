@@ -61,9 +61,15 @@ class WidgetbookApp extends StatelessWidget {
                       title: 'BottomNavigationTab',
                       tabItems: _tabItems,
                       screens: const [
-                        Icon(Icons.home),
-                        Icon(Icons.favorite),
-                        Icon(Icons.notification_add),
+                        Center(
+                          child: Icon(Icons.home),
+                        ),
+                        Center(
+                          child: Icon(Icons.favorite),
+                        ),
+                        Center(
+                          child: Icon(Icons.notification_add),
+                        ),
                       ],
                     ),
                   ),
@@ -137,9 +143,15 @@ class WidgetbookApp extends StatelessWidget {
                       title: 'TopNavigationTab',
                       tabItems: _tabItems,
                       screens: const [
-                        Icon(Icons.home),
-                        Icon(Icons.favorite),
-                        Icon(Icons.notification_add),
+                        Center(
+                          child: Icon(Icons.home),
+                        ),
+                        Center(
+                          child: Icon(Icons.favorite),
+                        ),
+                        Center(
+                          child: Icon(Icons.notification_add),
+                        ),
                       ],
                     ),
                   ),
