@@ -1,3 +1,4 @@
+import 'package:base_widgets/components/_widgets/arrow_paint.dart';
 import 'package:base_widgets/hooks/use_datetime.dart';
 import 'package:flutter/material.dart';
 
@@ -23,14 +24,14 @@ class BoardingCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final useDatetime = UseDatetime();
     return Container(
-      height: 180,
+      height: 120,
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(color: Colors.white),
         borderRadius: const BorderRadius.all(Radius.circular(10.0)),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
+        padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 12),
         child: Stack(
           children: [
             Align(
@@ -58,21 +59,35 @@ class BoardingCard extends StatelessWidget {
                     style: const TextStyle(
                       color: Colors.black54,
                       fontSize: 16,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ],
               ),
             ),
-            const Align(
+            Align(
               alignment: Alignment.center,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image(
-                    image: AssetImage('assets/plane.png'),
-                    fit: BoxFit.cover,
+                  SizedBox(
                     width: 100,
                     height: 40,
+                    child: CustomPaint(
+                      painter: ArrowPaint(
+                        color: airline == 'JAL' ? Colors.red : airline == 'ANA' ? Colors.blue : Colors.green),
+                      child: Align(
+                        alignment: const Alignment(-.2, 0),
+                        child: Text(
+                          airline,
+                          style: const TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -91,7 +106,7 @@ class BoardingCard extends StatelessWidget {
                         '$boardingType\n$registration',
                         style: const TextStyle(
                           color: Colors.black87,
-                          fontSize: 10,
+                          fontSize: 11,
                           letterSpacing: 0.8,
                         ),
                       ),
@@ -102,6 +117,7 @@ class BoardingCard extends StatelessWidget {
                     style: const TextStyle(
                       color: Colors.black54,
                       fontSize: 16,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ],
