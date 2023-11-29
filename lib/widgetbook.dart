@@ -41,8 +41,8 @@ class WidgetbookApp extends StatelessWidget {
                   builder: (context) => Center(
                     child: BoardingCard(
                       boardedAt: DateTime.now(),
-                      departure: 'ITM',
-                      arrival: 'HND',
+                      departure: '大阪伊丹 / ITM',
+                      arrival: '東京羽田 / HND',
                       airline: 'JAL',
                       boardingType: 'Boeing777-2',
                       registration: 'JA745A',

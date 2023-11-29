@@ -39,14 +39,15 @@ class BoardingCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 100,
+                    width: 80,
+                    height: 20,
                     child: FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Text(
                         useDatetime.formatDatetime(boardedAt),
                         style: const TextStyle(
                           color: Colors.black87,
-                          fontSize: 22,
+                          fontSize: 10,
                           letterSpacing: 0.8,
                         ),
                       ),
@@ -56,29 +57,22 @@ class BoardingCard extends StatelessWidget {
                     departure,
                     style: const TextStyle(
                       color: Colors.black54,
-                      fontSize: 44,
+                      fontSize: 16,
                     ),
                   ),
                 ],
               ),
             ),
-            Align(
+            const Align(
               alignment: Alignment.center,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Image(
+                  Image(
                     image: AssetImage('assets/plane.png'),
                     fit: BoxFit.cover,
-                    width: 125,
-                    height: 50,
-                  ),
-                  Text(
-                    '--- $airline ---',
-                    style: const TextStyle(
-                      color: Colors.black54,
-                      fontSize: 18,
-                    ),
+                    width: 100,
+                    height: 40,
                   ),
                 ],
               ),
@@ -90,13 +84,14 @@ class BoardingCard extends StatelessWidget {
                 children: [
                   SizedBox(
                     width: 60,
+                    height: 20,
                     child: FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Text(
                         '$boardingType\n$registration',
                         style: const TextStyle(
                           color: Colors.black87,
-                          fontSize: 20,
+                          fontSize: 10,
                           letterSpacing: 0.8,
                         ),
                       ),
@@ -106,7 +101,7 @@ class BoardingCard extends StatelessWidget {
                     arrival,
                     style: const TextStyle(
                       color: Colors.black54,
-                      fontSize: 44,
+                      fontSize: 16,
                     ),
                   ),
                 ],
