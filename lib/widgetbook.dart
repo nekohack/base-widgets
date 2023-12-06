@@ -118,6 +118,9 @@ class WidgetbookApp extends StatelessWidget {
                     child: CustomTextField(
                       controller: TextEditingController(),
                       fillColor: Colors.white,
+                      onChanged: (String? value) {
+                        print(value);
+                      },
                     ),
                   ),
                 ),
@@ -128,6 +131,9 @@ class WidgetbookApp extends StatelessWidget {
                       controller: TextEditingController(),
                       fillColor: Colors.white,
                       hintText: 'Please enter your hint text here.',
+                      onChanged: (String? value) {
+                        print(value);
+                      },
                     ),
                   ),
                 ),

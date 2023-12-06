@@ -8,11 +8,17 @@ void main() {
       ..addScenario('Default', CustomTextField(
         controller: TextEditingController(),
         fillColor: Colors.white,
+        onChanged: (String? value) {
+          print(value);
+        },
       ))
       ..addScenario('With Hint Text', CustomTextField(
         controller: TextEditingController(),
         fillColor: Colors.white,
         hintText: 'Please enter your hint text here.',
+        onChanged: (String? value) {
+          print(value);
+        },
       ));
     await tester.pumpWidgetBuilder(builder.build());
     await screenMatchesGolden(tester, 'custom_text_field_types_widget');

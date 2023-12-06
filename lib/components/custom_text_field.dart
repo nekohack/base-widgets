@@ -4,12 +4,14 @@ class CustomTextField extends StatelessWidget {
   final TextEditingController controller;
   final Color fillColor;
   final String hintText;
+  final Function(String?) onChanged;
 
   const CustomTextField({
     Key? key,
     required this.controller,
     required this.fillColor,
     this.hintText = '',
+    required this.onChanged,
   }) : super(key: key);
 
   @override
@@ -22,6 +24,7 @@ class CustomTextField extends StatelessWidget {
         hintText: hintText,
         border: const OutlineInputBorder(),
       ),
+      onChanged: onChanged,
     );
   }
 }
