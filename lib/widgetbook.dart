@@ -107,6 +107,20 @@ class WidgetbookApp extends StatelessWidget {
                     ),
                   ),
                 ),
+                WidgetbookUseCase(
+                  name: 'Expanded',
+                  builder: (context) => Center(
+                    child: DropdownField(
+                      color: Colors.blue,
+                      underlineColor: Colors.deepPurpleAccent,
+                      dropdownList: const ['One', 'Two', 'Three', 'Four'],
+                      isExpanded: true,
+                      onChanged: (String? value) {
+                        print(value);
+                      },
+                    ),
+                  ),
+                ),
               ],
             ),
             WidgetbookComponent(

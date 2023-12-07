@@ -4,6 +4,7 @@ class DropdownField extends StatefulWidget {
   final Color color;
   final Color underlineColor;
   final List<String> dropdownList;
+  final bool? isExpanded;
   final Function(String?) onChanged;
 
   const DropdownField({
@@ -12,6 +13,7 @@ class DropdownField extends StatefulWidget {
     required this.underlineColor,
     required this.dropdownList,
     required this.onChanged,
+    this.isExpanded,
   }) : super(key: key);
 
   @override
@@ -48,6 +50,7 @@ class _DropdownFieldState extends State<DropdownField> {
         height: 2,
         color: widget.underlineColor,
       ),
+      isExpanded: widget.isExpanded ?? false,
       onChanged: _onChanged,
     );
   }
