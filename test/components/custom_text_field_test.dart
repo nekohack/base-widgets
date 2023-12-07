@@ -7,6 +7,7 @@ void main() {
     final builder = GoldenBuilder.grid(columns:2, widthToHeightRatio: 1)
       ..addScenario('Default', CustomTextField(
         controller: TextEditingController(),
+        color: Colors.blue,
         fillColor: Colors.white,
         onChanged: (String? value) {
           print(value);
@@ -14,6 +15,7 @@ void main() {
       ))
       ..addScenario('With Hint Text', CustomTextField(
         controller: TextEditingController(),
+        color: Colors.blue,
         fillColor: Colors.white,
         hintText: 'Please enter your hint text here.',
         onChanged: (String? value) {

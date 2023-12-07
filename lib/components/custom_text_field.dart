@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
   final TextEditingController controller;
+  final Color color;
   final Color fillColor;
   final String hintText;
   final Function(String?) onChanged;
@@ -9,6 +10,7 @@ class CustomTextField extends StatelessWidget {
   const CustomTextField({
     Key? key,
     required this.controller,
+    required this.color,
     required this.fillColor,
     this.hintText = '',
     required this.onChanged,
@@ -22,7 +24,11 @@ class CustomTextField extends StatelessWidget {
         filled: true,
         fillColor: fillColor,
         hintText: hintText,
-        border: const OutlineInputBorder(),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: color,
+          ),
+        ),
       ),
       onChanged: onChanged,
     );
