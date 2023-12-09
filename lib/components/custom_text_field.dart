@@ -29,6 +29,9 @@ class CustomTextField extends StatelessWidget {
             color: color,
           ),
         ),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(4),
+        ),
       ),
       onChanged: onChanged,
     );

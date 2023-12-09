@@ -27,6 +27,9 @@ class _DatepickerFieldState extends State<DatepickerField> {
       style: ElevatedButton.styleFrom(
         backgroundColor: widget.backgroundColor,
         fixedSize: widget.maxFinite != false ? const Size.fromWidth(double.maxFinite) : null,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(4),
+        ),
       ),
       onPressed: () async {
         final DateTime? picked = await showDatePicker(

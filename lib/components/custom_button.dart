@@ -20,6 +20,9 @@ class CustomButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         backgroundColor: backgroundColor,
         fixedSize: maxFinite != false ? const Size.fromWidth(double.maxFinite) : null,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(4),
+        ),
       ),
       onPressed: onPressed,
       child: Text(title),
