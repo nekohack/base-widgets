@@ -90,6 +90,17 @@ class WidgetbookApp extends StatelessWidget {
                     ),
                   ),
                 ),
+                WidgetbookUseCase(
+                  name: 'maxFinite',
+                  builder: (context) => Center(
+                    child: CustomButton(
+                      backgroundColor: Colors.blue,
+                      title: 'Click',
+                      maxFinite: true,
+                      onPressed: () {},
+                    ),
+                  ),
+                ),
               ],
             ),
             WidgetbookComponent(
@@ -101,6 +112,19 @@ class WidgetbookApp extends StatelessWidget {
                     child: DatepickerField(
                       backgroundColor: Colors.blue,
                       title: 'Datepicker',
+                      onChanged: (DateTime? value) {
+                        print(value);
+                      },
+                    ),
+                  ),
+                ),
+                WidgetbookUseCase(
+                  name: 'maxFinite',
+                  builder: (context) => Center(
+                    child: DatepickerField(
+                      backgroundColor: Colors.blue,
+                      title: 'Datepicker',
+                      maxFinite: true,
                       onChanged: (DateTime? value) {
                         print(value);
                       },
