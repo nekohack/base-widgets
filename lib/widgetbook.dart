@@ -1,6 +1,7 @@
 import 'package:base_widgets/components/boarding_card.dart';
 import 'package:base_widgets/components/bottom_navigation_tab.dart';
 import 'package:base_widgets/components/custom_button.dart';
+import 'package:base_widgets/components/datepicker_field.dart';
 import 'package:base_widgets/components/dropdown_field.dart';
 import 'package:base_widgets/components/top_navigation_tab.dart';
 import 'package:base_widgets/components/custom_text_field.dart';
@@ -86,6 +87,23 @@ class WidgetbookApp extends StatelessWidget {
                       backgroundColor: Colors.blue,
                       title: 'Click',
                       onPressed: () {},
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            WidgetbookComponent(
+              name: 'DatepickerField',
+              useCases: [
+                WidgetbookUseCase(
+                  name: 'Default',
+                  builder: (context) => Center(
+                    child: DatepickerField(
+                      backgroundColor: Colors.blue,
+                      title: 'Datepicker',
+                      onChanged: (DateTime? value) {
+                        print(value);
+                      },
                     ),
                   ),
                 ),
