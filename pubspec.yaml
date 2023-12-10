@@ -26,6 +26,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   golden_toolkit: ^0.15.0
+  source_gen:
   widgetbook_generator: ^3.3.0
 
 flutter:

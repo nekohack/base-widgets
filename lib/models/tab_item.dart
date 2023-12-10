@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'tab_item.freezed.dart';
-part 'tab_item.g.dart';
+part 'generated/tab_item.freezed.dart';
+part 'generated/tab_item.g.dart';
 
 @freezed
 class TabItem with _$TabItem {
