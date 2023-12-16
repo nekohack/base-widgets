@@ -2,14 +2,18 @@ import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   final Color backgroundColor;
+  final Color borderColor;
   final String title;
+  final BorderRadius borderRadius;
   final bool? maxFinite;
   final Function() onPressed;
 
   const CustomButton({
     Key? key,
-    required this.backgroundColor,
+    this.backgroundColor = Colors.transparent,
+    this.borderColor = Colors.transparent,
     required this.title,
+    this.borderRadius = BorderRadius.zero,
     this.maxFinite = false,
     required this.onPressed,
   }) : super(key: key);
@@ -21,7 +25,8 @@ class CustomButton extends StatelessWidget {
         backgroundColor: backgroundColor,
         fixedSize: maxFinite != false ? const Size.fromWidth(double.maxFinite) : null,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(4),
+          side: BorderSide(color: borderColor),
+          borderRadius: borderRadius,
         ),
       ),
       onPressed: onPressed,

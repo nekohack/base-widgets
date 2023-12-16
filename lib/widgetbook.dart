@@ -91,12 +91,33 @@ class WidgetbookApp extends StatelessWidget {
                   ),
                 ),
                 WidgetbookUseCase(
+                  name: 'With Border',
+                  builder: (context) => Center(
+                    child: CustomButton(
+                      borderColor: Colors.blue,
+                      title: 'Click',
+                      onPressed: () {},
+                    ),
+                  ),
+                ),
+                WidgetbookUseCase(
                   name: 'maxFinite',
                   builder: (context) => Center(
                     child: CustomButton(
                       backgroundColor: Colors.blue,
                       title: 'Click',
                       maxFinite: true,
+                      onPressed: () {},
+                    ),
+                  ),
+                ),
+                WidgetbookUseCase(
+                  name: 'BorderRadius.circular(4)',
+                  builder: (context) => Center(
+                    child: CustomButton(
+                      backgroundColor: Colors.blue,
+                      title: 'Click',
+                      borderRadius: BorderRadius.circular(4),
                       onPressed: () {},
                     ),
                   ),
@@ -150,6 +171,19 @@ class WidgetbookApp extends StatelessWidget {
                   ),
                 ),
                 WidgetbookUseCase(
+                  name: 'With Border',
+                  builder: (context) => Center(
+                    child: DropdownField(
+                      color: Colors.blue,
+                      borderColor: Colors.deepPurpleAccent,
+                      dropdownList: const ['One', 'Two', 'Three', 'Four'],
+                      onChanged: (String? value) {
+                        print(value);
+                      },
+                    ),
+                  ),
+                ),
+                WidgetbookUseCase(
                   name: 'Expanded',
                   builder: (context) => Center(
                     child: DropdownField(
@@ -157,6 +191,20 @@ class WidgetbookApp extends StatelessWidget {
                       underlineColor: Colors.deepPurpleAccent,
                       dropdownList: const ['One', 'Two', 'Three', 'Four'],
                       isExpanded: true,
+                      onChanged: (String? value) {
+                        print(value);
+                      },
+                    ),
+                  ),
+                ),
+                WidgetbookUseCase(
+                  name: 'BorderRadius.circular(4)',
+                  builder: (context) => Center(
+                    child: DropdownField(
+                      color: Colors.blue,
+                      underlineColor: Colors.deepPurpleAccent,
+                      dropdownList: const ['One', 'Two', 'Three', 'Four'],
+                      borderRadius: BorderRadius.circular(4),
                       onChanged: (String? value) {
                         print(value);
                       },

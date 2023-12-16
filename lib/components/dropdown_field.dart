@@ -3,15 +3,19 @@ import 'package:flutter/material.dart';
 class DropdownField extends StatefulWidget {
   final Color color;
   final Color underlineColor;
+  final Color borderColor;
   final List<String> dropdownList;
+  final BorderRadius borderRadius;
   final bool? isExpanded;
   final Function(String?) onChanged;
 
   const DropdownField({
     Key? key,
     required this.color,
-    required this.underlineColor,
+    this.underlineColor = Colors.transparent,
+    this.borderColor = Colors.transparent,
     required this.dropdownList,
+    this.borderRadius = BorderRadius.zero,
     required this.onChanged,
     this.isExpanded,
   }) : super(key: key);
@@ -35,23 +39,32 @@ class _DropdownFieldState extends State<DropdownField> {
   @override
   Widget build(BuildContext context) {
     String dropdownValue = widget.dropdownList[currentValue];
-    return DropdownButton<String>(
-      items: widget.dropdownList.map<DropdownMenuItem<String>>((String value) {
-        return DropdownMenuItem<String>(
-          value: value,
-          child: Text(value),
-        );
-      }).toList(),
-      value: dropdownValue,
-      icon: const Icon(Icons.arrow_downward),
-      elevation: 16,
-      style: TextStyle(color: widget.color),
-      underline: Container(
-        height: 2,
-        color: widget.underlineColor,
+    return Container(
+      decoration: ShapeDecoration(
+        shape: RoundedRectangleBorder(
+          side: BorderSide(color: widget.borderColor),
+          borderRadius: widget.borderRadius,
+        ),
       ),
-      isExpanded: widget.isExpanded ?? false,
-      onChanged: _onChanged,
+      child: DropdownButton<String>(
+        items: widget.dropdownList.map<DropdownMenuItem<String>>((String value) {
+          return DropdownMenuItem<String>(
+            value: value,
+            child: Text(value),
+          );
+        }).toList(),
+        value: dropdownValue,
+        icon: const Icon(Icons.arrow_downward),
+        elevation: 16,
+        style: TextStyle(color: widget.color),
+        borderRadius: widget.borderRadius,
+        underline: Container(
+          height: 2,
+          color: widget.underlineColor,
+        ),
+        isExpanded: widget.isExpanded ?? false,
+        onChanged: _onChanged,
+      ),
     );
   }
 }
