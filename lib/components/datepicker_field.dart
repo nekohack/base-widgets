@@ -2,14 +2,18 @@ import 'package:flutter/material.dart';
 
 class DatepickerField extends StatefulWidget {
   final Color backgroundColor;
+  final Color borderColor;
   final String title;
+  final BorderRadius borderRadius;
   final bool? maxFinite;
   final Function(DateTime?) onChanged;
 
   const DatepickerField({
     Key? key,
-    required this.backgroundColor,
+    this.backgroundColor = Colors.transparent,
+    this.borderColor = Colors.transparent,
     required this.title,
+    this.borderRadius = BorderRadius.zero,
     this.maxFinite = false,
     required this.onChanged,
   }) : super(key: key);
@@ -28,7 +32,8 @@ class _DatepickerFieldState extends State<DatepickerField> {
         backgroundColor: widget.backgroundColor,
         fixedSize: widget.maxFinite != false ? const Size.fromWidth(double.maxFinite) : null,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(4),
+          side: BorderSide(color: widget.borderColor),
+          borderRadius: widget.borderRadius,
         ),
       ),
       onPressed: () async {
