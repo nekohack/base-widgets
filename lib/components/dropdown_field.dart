@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class DropdownField extends StatefulWidget {
-  final Color color;
+  final Color textColor;
   final Color underlineColor;
   final Color borderColor;
   final List<String> dropdownList;
@@ -11,7 +11,7 @@ class DropdownField extends StatefulWidget {
 
   const DropdownField({
     Key? key,
-    required this.color,
+    required this.textColor,
     this.underlineColor = Colors.transparent,
     this.borderColor = Colors.transparent,
     required this.dropdownList,
@@ -56,7 +56,7 @@ class _DropdownFieldState extends State<DropdownField> {
         value: dropdownValue,
         icon: const Icon(Icons.arrow_downward),
         elevation: 16,
-        style: TextStyle(color: widget.color),
+        style: TextStyle(color: widget.textColor),
         borderRadius: widget.borderRadius,
         underline: Container(
           height: 2,

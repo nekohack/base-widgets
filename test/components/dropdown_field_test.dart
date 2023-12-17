@@ -6,7 +6,7 @@ void main() {
   testGoldens('DropdownField types should look correct', (tester) async {
     final builder = GoldenBuilder.grid(columns:2, widthToHeightRatio: 1)
       ..addScenario('Blue', DropdownField(
-        color: Colors.blue,
+        textColor: Colors.blue,
         underlineColor: Colors.deepPurpleAccent,
         dropdownList: const ['One', 'Two', 'Three', 'Four'],
         onChanged: (String? value) {
@@ -14,7 +14,7 @@ void main() {
         },
       ))
       ..addScenario('Green', DropdownField(
-        color: Colors.green,
+        textColor: Colors.green,
         underlineColor: Colors.teal,
         dropdownList: const ['One', 'Two', 'Three', 'Four'],
         onChanged: (String? value) {

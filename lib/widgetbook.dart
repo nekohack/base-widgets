@@ -85,6 +85,7 @@ class WidgetbookApp extends StatelessWidget {
                   builder: (context) => Center(
                     child: CustomButton(
                       backgroundColor: Colors.blue,
+                      textColor: Colors.white,
                       title: 'Click',
                       onPressed: () {},
                     ),
@@ -94,6 +95,7 @@ class WidgetbookApp extends StatelessWidget {
                   name: 'With Border',
                   builder: (context) => Center(
                     child: CustomButton(
+                      textColor: Colors.white,
                       borderColor: Colors.blue,
                       title: 'Click',
                       onPressed: () {},
@@ -105,6 +107,7 @@ class WidgetbookApp extends StatelessWidget {
                   builder: (context) => Center(
                     child: CustomButton(
                       backgroundColor: Colors.blue,
+                      textColor: Colors.white,
                       title: 'Click',
                       maxFinite: true,
                       onPressed: () {},
@@ -116,6 +119,7 @@ class WidgetbookApp extends StatelessWidget {
                   builder: (context) => Center(
                     child: CustomButton(
                       backgroundColor: Colors.blue,
+                      textColor: Colors.white,
                       title: 'Click',
                       borderRadius: BorderRadius.circular(4),
                       onPressed: () {},
@@ -132,6 +136,7 @@ class WidgetbookApp extends StatelessWidget {
                   builder: (context) => Center(
                     child: DatepickerField(
                       backgroundColor: Colors.blue,
+                      textColor: Colors.white,
                       title: 'Datepicker',
                       onChanged: (DateTime? value) {
                         print(value);
@@ -144,6 +149,7 @@ class WidgetbookApp extends StatelessWidget {
                   builder: (context) => Center(
                     child: DatepickerField(
                       backgroundColor: Colors.blue,
+                      textColor: Colors.white,
                       title: 'Datepicker',
                       maxFinite: true,
                       onChanged: (DateTime? value) {
@@ -161,7 +167,7 @@ class WidgetbookApp extends StatelessWidget {
                   name: 'Default',
                   builder: (context) => Center(
                     child: DropdownField(
-                      color: Colors.blue,
+                      textColor: Colors.blue,
                       underlineColor: Colors.deepPurpleAccent,
                       dropdownList: const ['One', 'Two', 'Three', 'Four'],
                       onChanged: (String? value) {
@@ -174,7 +180,7 @@ class WidgetbookApp extends StatelessWidget {
                   name: 'With Border',
                   builder: (context) => Center(
                     child: DropdownField(
-                      color: Colors.blue,
+                      textColor: Colors.blue,
                       borderColor: Colors.deepPurpleAccent,
                       dropdownList: const ['One', 'Two', 'Three', 'Four'],
                       onChanged: (String? value) {
@@ -187,7 +193,7 @@ class WidgetbookApp extends StatelessWidget {
                   name: 'Expanded',
                   builder: (context) => Center(
                     child: DropdownField(
-                      color: Colors.blue,
+                      textColor: Colors.blue,
                       underlineColor: Colors.deepPurpleAccent,
                       dropdownList: const ['One', 'Two', 'Three', 'Four'],
                       isExpanded: true,
@@ -201,7 +207,7 @@ class WidgetbookApp extends StatelessWidget {
                   name: 'BorderRadius.circular(4)',
                   builder: (context) => Center(
                     child: DropdownField(
-                      color: Colors.blue,
+                      textColor: Colors.blue,
                       underlineColor: Colors.deepPurpleAccent,
                       dropdownList: const ['One', 'Two', 'Three', 'Four'],
                       borderRadius: BorderRadius.circular(4),

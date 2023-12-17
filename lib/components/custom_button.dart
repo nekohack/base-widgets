@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   final Color backgroundColor;
+  final Color textColor;
   final Color borderColor;
   final String title;
   final BorderRadius borderRadius;
@@ -11,6 +12,7 @@ class CustomButton extends StatelessWidget {
   const CustomButton({
     Key? key,
     this.backgroundColor = Colors.transparent,
+    required this.textColor,
     this.borderColor = Colors.transparent,
     required this.title,
     this.borderRadius = BorderRadius.zero,
@@ -23,6 +25,7 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: backgroundColor,
+        foregroundColor: textColor,
         fixedSize: maxFinite != false ? const Size.fromWidth(double.maxFinite) : null,
         shape: RoundedRectangleBorder(
           side: BorderSide(color: borderColor),

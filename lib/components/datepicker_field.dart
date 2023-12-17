@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class DatepickerField extends StatefulWidget {
   final Color backgroundColor;
+  final Color textColor;
   final Color borderColor;
   final String title;
   final BorderRadius borderRadius;
@@ -11,6 +12,7 @@ class DatepickerField extends StatefulWidget {
   const DatepickerField({
     Key? key,
     this.backgroundColor = Colors.transparent,
+    required this.textColor,
     this.borderColor = Colors.transparent,
     required this.title,
     this.borderRadius = BorderRadius.zero,
@@ -30,6 +32,7 @@ class _DatepickerFieldState extends State<DatepickerField> {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: widget.backgroundColor,
+        foregroundColor: widget.textColor,
         fixedSize: widget.maxFinite != false ? const Size.fromWidth(double.maxFinite) : null,
         shape: RoundedRectangleBorder(
           side: BorderSide(color: widget.borderColor),

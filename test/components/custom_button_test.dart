@@ -7,11 +7,13 @@ void main() {
     final builder = GoldenBuilder.grid(columns:2, widthToHeightRatio: 1)
       ..addScenario('Blue', CustomButton(
         backgroundColor: Colors.blue,
+        textColor: Colors.white,
         title: 'Click',
         onPressed: () {},
       ))
       ..addScenario('Green', CustomButton(
         backgroundColor: Colors.green,
+        textColor: Colors.white,
         title: 'Click',
         onPressed: () {},
       ));
