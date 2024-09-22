@@ -50,7 +50,10 @@ class _DropdownFieldState extends State<DropdownField> {
         items: widget.dropdownList.map<DropdownMenuItem<String>>((String value) {
           return DropdownMenuItem<String>(
             value: value,
-            child: Text(value),
+            child: Text(
+              value,
+              overflow: TextOverflow.ellipsis,
+            ),
           );
         }).toList(),
         value: dropdownValue,
