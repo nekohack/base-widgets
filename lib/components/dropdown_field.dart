@@ -6,6 +6,7 @@ class DropdownField extends StatefulWidget {
   final Color borderColor;
   final List<String> dropdownList;
   final BorderRadius borderRadius;
+  final bool? isInfinityWidth;
   final bool? isExpanded;
   final Function(String?) onChanged;
 
@@ -17,6 +18,7 @@ class DropdownField extends StatefulWidget {
     required this.dropdownList,
     this.borderRadius = BorderRadius.zero,
     required this.onChanged,
+    this.isInfinityWidth,
     this.isExpanded,
   }) : super(key: key);
 
@@ -46,6 +48,7 @@ class _DropdownFieldState extends State<DropdownField> {
           borderRadius: widget.borderRadius,
         ),
       ),
+      width: widget.isInfinityWidth == true ? double.infinity : null,
       child: DropdownButton<String>(
         items: widget.dropdownList.map<DropdownMenuItem<String>>((String value) {
           return DropdownMenuItem<String>(
