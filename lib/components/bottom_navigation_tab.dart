@@ -34,7 +34,7 @@ class _BottomNavigationTabState extends State<BottomNavigationTab> {
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
         items: widget.tabItems.map((item) => BottomNavigationBarItem(
-          icon: Icon(IconData(item.icon, fontFamily: 'MaterialIcons')),
+          icon: Icon(IconData(item.icon)),
           label: item.name,
         )).toList(),
         type: BottomNavigationBarType.fixed,
