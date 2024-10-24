@@ -1,4 +1,5 @@
 import 'package:base_widgets/components/_widgets/arrow_paint.dart';
+import 'package:base_widgets/components/paper_clipper.dart';
 import 'package:base_widgets/hooks/use_datetime.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +10,22 @@ class BoardingCard extends StatelessWidget {
   final String airline;
   final String boardingType;
   final String registration;
+
+  final TextStyle titleTextStyle = const TextStyle(
+    fontFamily: 'OpenSans',
+    fontSize: 11,
+    height: 1,
+    letterSpacing: .2,
+    fontWeight: FontWeight.w600,
+    color: Color(0xffafafaf),
+  );
+  final TextStyle contentTextStyle = const TextStyle(
+    fontFamily: 'Oswald',
+    fontSize: 16,
+    height: 1.8,
+    letterSpacing: .3,
+    color: Color(0xff083e64),
+  );
 
   const BoardingCard({
     Key? key,
@@ -23,106 +40,132 @@ class BoardingCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final useDatetime = UseDatetime();
-    return Container(
-      height: 120,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        border: Border.all(color: Colors.white),
-        borderRadius: const BorderRadius.all(Radius.circular(10.0)),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 12),
+    return Padding(
+      padding: const EdgeInsets.all(8),
+      child: ClipPath(
+        clipBehavior: Clip.antiAlias,
+        clipper: PaperClipper(),
         child: Stack(
           children: [
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    width: 80,
-                    height: 20,
-                    child: FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Text(
-                        useDatetime.formatDatetime(boardedAt),
-                        style: const TextStyle(
-                          color: Colors.black87,
-                          fontSize: 10,
-                          letterSpacing: 0.8,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Text(
-                    departure,
-                    style: const TextStyle(
-                      color: Colors.black54,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
+            Container(
+              height: 120,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(color: Colors.white),
+                borderRadius: const BorderRadius.all(Radius.circular(10.0)),
               ),
-            ),
-            Align(
-              alignment: Alignment.center,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    width: 100,
-                    height: 40,
-                    child: CustomPaint(
-                      painter: ArrowPaint(
-                        color: airline == 'JAL' ? Colors.red : airline == 'ANA' ? Colors.blue : Colors.green),
-                      child: Align(
-                        alignment: const Alignment(-.2, 0),
-                        child: Text(
-                          airline,
-                          style: const TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(4.0),
+                ),
+                width: double.infinity,
+                height: double.infinity,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: <Widget>[
+                        Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text('Board'.toUpperCase(),
+                                  style: titleTextStyle),
+                              Text(useDatetime.formatDatetime(boardedAt),
+                                  style: contentTextStyle),
+                            ]),
+                        Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text('Type'.toUpperCase(), style: titleTextStyle),
+                              Text(boardingType, style: contentTextStyle),
+                            ]),
+                        Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text('Reg'.toUpperCase(), style: titleTextStyle),
+                              Text(registration, style: contentTextStyle),
+                            ]),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: <Widget>[
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Text('Dep.'.toUpperCase(),
+                                        style: titleTextStyle),
+                                    Text(
+                                      departure,
+                                      style: contentTextStyle,
+                                    ),
+                                  ]),
+                            ],
                           ),
                         ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    width: 60,
-                    height: 20,
-                    child: FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Text(
-                        '$boardingType\n$registration',
-                        style: const TextStyle(
-                          color: Colors.black87,
-                          fontSize: 11,
-                          letterSpacing: 0.8,
+                        Align(
+                          alignment: Alignment.center,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                width: 100,
+                                height: 40,
+                                child: CustomPaint(
+                                  painter: ArrowPaint(
+                                      color: airline == 'JAL'
+                                          ? Colors.red
+                                          : airline == 'ANA'
+                                              ? Colors.blue
+                                              : Colors.grey),
+                                  child: Align(
+                                    alignment: const Alignment(-.2, 0),
+                                    child: Text(
+                                      airline,
+                                      style: const TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Text('Arr.'.toUpperCase(),
+                                        style: titleTextStyle),
+                                    Text(
+                                      arrival,
+                                      style: contentTextStyle,
+                                    ),
+                                  ]),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-                  Text(
-                    arrival,
-                    style: const TextStyle(
-                      color: Colors.black54,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
+            )
           ],
         ),
       ),
