@@ -6,12 +6,13 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.6.0-216.1.beta <4.0.0'
+  sdk: '>=3.7.0-209.1.beta <4.0.0'
 
 dependencies:
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
+  # flutter_svg: ^0.22.0
   freezed: ^2.4.5
   freezed_annotation: ^2.4.1
   json_annotation: ^4.8.1
